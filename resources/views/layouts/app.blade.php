@@ -23,7 +23,9 @@
 </head>
 <body>
 
-    @include('layouts.header')
+    @auth
+        @include('layouts.header')
+    @endauth
 
     <!-- Main Content Area -->
     <main class="container mb-5">
