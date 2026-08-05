@@ -5,11 +5,15 @@
     --glass-card-bg: rgba(15, 23, 42, 0.6);
     --text-primary: #f8fafc;
     --text-secondary: #94a3b8;
-    --primary-accent: #6366f1; /* Indigo */
+    --primary-accent: #6366f1;
+    /* Indigo */
     --primary-glow: rgba(99, 102, 241, 0.15);
-    --success-accent: #10b981; /* Emerald */
-    --warning-accent: #f59e0b; /* Amber */
-    --danger-accent: #ef4444; /* Rose */
+    --success-accent: #10b981;
+    /* Emerald */
+    --warning-accent: #f59e0b;
+    /* Amber */
+    --danger-accent: #ef4444;
+    /* Rose */
     --border-radius-lg: 16px;
     --border-radius-sm: 8px;
 }
@@ -27,13 +31,16 @@ body {
 ::-webkit-scrollbar {
     width: 8px;
 }
+
 ::-webkit-scrollbar-track {
     background: rgba(15, 23, 42, 0.5);
 }
+
 ::-webkit-scrollbar-thumb {
     background: rgba(99, 102, 241, 0.3);
     border-radius: 4px;
 }
+
 ::-webkit-scrollbar-thumb:hover {
     background: rgba(99, 102, 241, 0.5);
 }
@@ -74,11 +81,13 @@ body {
     box-shadow: 0 4px 14px 0 rgba(99, 102, 241, 0.4);
     transition: all 0.2s ease;
 }
+
 .btn-premium:hover {
     transform: translateY(-1px);
     box-shadow: 0 6px 20px 0 rgba(99, 102, 241, 0.6);
     color: white;
 }
+
 .btn-premium:active {
     transform: translateY(1px);
 }
@@ -92,6 +101,7 @@ body {
     padding: 8px 18px;
     transition: all 0.2s ease;
 }
+
 .btn-glass-secondary:hover {
     background: rgba(255, 255, 255, 0.1);
     color: white;
@@ -107,12 +117,14 @@ body {
     padding: 12px 16px;
     transition: all 0.2s ease;
 }
+
 .glass-input:focus {
     background: rgba(255, 255, 255, 0.05);
     border-color: var(--primary-accent);
     box-shadow: 0 0 0 3px var(--primary-glow);
     outline: none;
 }
+
 .glass-input::placeholder {
     color: var(--text-secondary);
     opacity: 0.6;
@@ -136,6 +148,7 @@ select.glass-input option {
     right: 24px;
     z-index: 9999;
 }
+
 .custom-toast {
     background: rgba(15, 23, 42, 0.9);
     backdrop-filter: blur(8px);
@@ -144,36 +157,43 @@ select.glass-input option {
     border-radius: 12px;
     padding: 16px 24px;
     margin-bottom: 12px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
     display: flex;
     align-items: center;
     min-width: 300px;
     animation: slideIn 0.3s ease forwards;
     border-left: 4px solid var(--primary-accent);
 }
+
 .custom-toast.toast-success {
     border-left-color: var(--success-accent);
 }
+
 .custom-toast.toast-danger {
     border-left-color: var(--danger-accent);
 }
+
 .custom-toast.toast-warning {
     border-left-color: var(--warning-accent);
 }
+
 .custom-toast i {
     margin-right: 12px;
     font-size: 1.25rem;
 }
+
 @keyframes slideIn {
     from {
         transform: translateX(100%) translateY(-10px);
         opacity: 0;
     }
+
     to {
         transform: translateX(0) translateY(0);
         opacity: 1;
     }
 }
+
 @keyframes fadeOut {
     to {
         transform: translateX(50%);
@@ -186,6 +206,7 @@ select.glass-input option {
     justify-content: center;
     margin-top: 24px;
 }
+
 .page-link {
     background: rgba(255, 255, 255, 0.03);
     border: 1px solid var(--glass-border);
@@ -194,16 +215,19 @@ select.glass-input option {
     border-radius: 6px !important;
     transition: all 0.2s ease;
 }
+
 .page-link:hover {
     background: rgba(99, 102, 241, 0.2);
     color: white;
     border-color: rgba(99, 102, 241, 0.4);
 }
+
 .page-item.active .page-link {
     background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
     border-color: transparent;
     box-shadow: 0 0 10px rgba(99, 102, 241, 0.4);
 }
+
 .page-item.disabled .page-link {
     background: rgba(255, 255, 255, 0.01);
     border-color: var(--glass-border);
@@ -215,23 +239,27 @@ select.glass-input option {
     background: #0f172a;
     border: 1px solid var(--glass-border);
     border-radius: var(--border-radius-lg);
-    box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
     color: var(--text-primary);
 }
+
 .modal-header {
     border-bottom: 1px solid var(--glass-border);
     padding: 20px 24px;
 }
+
 .modal-footer {
     border-top: 1px solid var(--glass-border);
     padding: 16px 24px;
 }
+
 .close {
     color: var(--text-secondary);
     text-shadow: none;
     opacity: 0.8;
     transition: all 0.2s ease;
 }
+
 .close:hover {
     color: white;
     opacity: 1;
@@ -272,6 +300,7 @@ select.glass-input option {
     color: #f59e0b;
     border-color: rgba(245, 158, 11, 0.2);
 }
+
 .status-pending:hover {
     background: rgba(245, 158, 11, 0.18);
     box-shadow: 0 0 10px rgba(245, 158, 11, 0.15);
@@ -282,6 +311,7 @@ select.glass-input option {
     color: #10b981;
     border-color: rgba(16, 185, 129, 0.25);
 }
+
 .status-completed:hover {
     background: rgba(16, 185, 129, 0.25);
     box-shadow: 0 0 10px rgba(16, 185, 129, 0.2);
@@ -316,20 +346,23 @@ select.glass-input option {
     border-radius: 4px;
     transition: background 0.2s, color 0.2s;
 }
+
 .drag-handle:hover {
-    background: rgba(255,255,255,0.05);
+    background: rgba(255, 255, 255, 0.05);
     color: white;
 }
+
 .drag-handle:active {
     cursor: grabbing;
 }
 
 /* Completed state styling */
 .task-completed .task-title {
-    text-decoration: line-through;
+    /* text-decoration: line-through; */
     color: var(--text-secondary);
     opacity: 0.7;
 }
+
 .task-completed .task-desc {
     opacity: 0.5;
 }
@@ -347,15 +380,18 @@ select.glass-input option {
     color: var(--text-secondary);
     transition: all 0.2s ease;
 }
+
 .action-btn:hover {
     color: white;
-    border-color: rgba(255,255,255,0.15);
+    border-color: rgba(255, 255, 255, 0.15);
 }
+
 .action-btn.btn-edit:hover {
     background: rgba(99, 102, 241, 0.15);
     color: #818cf8;
     border-color: rgba(99, 102, 241, 0.3);
 }
+
 .action-btn.btn-delete:hover {
     background: rgba(239, 68, 68, 0.15);
     color: #f87171;

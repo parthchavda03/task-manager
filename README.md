@@ -1,59 +1,135 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# TaskSpace 🌌
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+TaskSpace is a premium, high-fidelity task management application built with a modern dark-mode aesthetic and glassmorphic UI elements. It features seamless interactive capabilities like drag-and-drop task reordering, AJAX status toggling, search, and pagination, all built on top of Laravel 12 and powered by Tailwind CSS v4 and Bootstrap 4.
 
-## About Laravel
+---
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## ✨ Features
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+- **💎 Premium Glassmorphic UI**: Sleek dark-mode theme utilizing rich, curated gradients, micro-animations, and glassmorphic panels for an exceptionally premium look and feel.
+- **🔐 Secure Authentication**: Integrated login and logout system powered by secure Laravel session authentication.
+- **🔄 Interactive Drag & Drop Reordering**: Reorder tasks intuitively using drag handles powered by SortableJS, with ordering persisted instantly to the database via AJAX.
+- **⚡ Optimistic AJAX Status Toggle**: Change task status between `Pending` and `Completed` with a single click, instantly updating the UI styling (striking out completed tasks, changing badge colors) without reloading the page.
+- **📝 Interactive CRUD**: Full Create, Read, Update, and Delete operations for tasks managed inside elegant, contextual modal dialogs.
+- **🔍 Quick Search & Pagination**: Filter tasks by title or description dynamically, complete with page navigation (10 tasks per page).
+- **🔔 Custom Toast Notifications**: An elegant, custom-designed toast utility that displays success or error messages automatically.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+---
 
-## Learning Laravel
+## 🛠️ Technology Stack
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+- **Backend**: Laravel 12.x, PHP 8.2+
+- **Frontend**: Blade Templates, Tailwind CSS v4, Bootstrap 4, jQuery, SortableJS, FontAwesome 6
+- **Database**: SQLite (default connection for easy local setup)
+- **Asset Bundler**: Vite 6.x
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+---
 
-## Laravel Sponsors
+## 🚀 Setup & Installation
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+Follow these steps to set up and run the application locally on your machine:
 
-### Premium Partners
+### Prerequisites
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+Ensure you have the following installed:
+- PHP 8.2 or higher
+- Composer
+- Node.js & npm
+- SQLite extension (enabled in your `php.ini`)
 
-## Contributing
+### Quick Setup (Recommended)
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+Run the automated composer script which installs all PHP and NPM dependencies, sets up the database, and builds assets:
 
-## Code of Conduct
+```bash
+composer run setup
+```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+### Manual Setup Steps
 
-## Security Vulnerabilities
+If you prefer to run the setup steps manually, run the following commands:
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+1. **Install Composer Dependencies**:
+   ```bash
+   composer install
+   ```
 
-## License
+2. **Configure Environment File**:
+   Create a `.env` file by copying the example file:
+   ```bash
+   copy .env.example .env
+   ```
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+3. **Generate App Key**:
+   ```bash
+   php artisan key:generate
+   ```
+
+4. **Initialize Database and Seed Admin User**:
+   *Note: Ensure the database file `database/database.sqlite` is created or automatically initialized.*
+   ```bash
+   php artisan migrate:fresh --seed
+   ```
+
+5. **Install and Build Frontend Assets**:
+   ```bash
+   npm install
+   npm run build
+   ```
+
+---
+
+## 🔑 Default Credentials
+
+The database seeder automatically creates an administrator account for you to log in and access the dashboard.
+
+- **Email**: `admin@gmail.com`
+- **Password**: `123456`
+
+---
+
+## 💻 Running the Application
+
+To run the application locally with hot-reloading for frontend assets and local servers:
+
+```bash
+composer run dev
+```
+
+Alternatively, you can run the services individually:
+
+- **Start PHP server**: `php artisan serve`
+- **Start frontend hot-reloader**: `npm run dev`
+
+Access the application at [http://localhost:8000](http://localhost:8000).
+
+---
+
+## 🛣️ API & Route Reference
+
+Below are the primary routes registered within the application:
+
+| Method | URI | Action / Route Name | Middleware | Description |
+|---|---|---|---|---|
+| **GET** | `/login` | `login` | `guest` | Show the login page |
+| **POST** | `/login` | `login` | `guest` | Authenticate the user |
+| **POST** | `/logout` | `logout` | `auth` | Log out the user |
+| **GET** | `/` | Redirects to `/tasks` | `auth` | Root landing redirection |
+| **GET** | `/tasks` | `tasks.index` | `auth` | View the tasks dashboard |
+| **POST** | `/tasks` | `tasks.store` | `auth` | Create a new task |
+| **PUT** | `/tasks/{task}` | `tasks.update` | `auth` | Update a specific task |
+| **DELETE** | `/tasks/{task}` | `tasks.destroy` | `auth` | Delete a specific task |
+| **PATCH** | `/tasks/{task}/toggle-status` | `tasks.toggle-status` | `auth` | Toggle task status (AJAX) |
+| **POST** | `/tasks/reorder` | `tasks.reorder` | `auth` | Persist new task order (AJAX) |
+
+---
+
+## 🧪 Running Tests
+
+The application includes a comprehensive test suite covering guest authentication restrictions, login/logout validation, task CRUD operations, AJAX status toggling, and task reordering.
+
+To execute the feature tests, run:
+
+```bash
+php artisan test
+```
